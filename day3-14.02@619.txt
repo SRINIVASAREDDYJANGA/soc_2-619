@@ -1,0 +1,28 @@
+import numpy as np
+n=int(input())
+arr=np.arange(n)
+print(arr)
+l1 = [10, 20, 30, 40]
+arr1 = np.array(l1).reshape(2, 2)
+print(arr1)
+print(arr1[1:2])
+print(np.mean(arr1))
+print(np.median(arr1))
+print(np.sum(arr1))
+print(np.std(arr1))
+n1=int(input())
+identity_matrix = np.eye(n1)
+
+print("3x3 Identity Matrix:")
+print(identity_matrix)
+
+
+5
+[0 1 2 3 4]
+[[10 20]
+ [30 40]]
+[[30 40]]
+25.0
+25.0
+100
+11.180339887498949

@@ -1,0 +1,209 @@
+#identity matrix can be created using 2 functions
+#EYE()--> USED TTO DEFINE both user defined rows and coloumns
+#identity()-->used to define same number of rows and coloumns
+
+#syntax-->np.identity(5)-->5 is 5 rows and 5 coloumns
+#syntax-->np.eye(3,4)--> 3 rows and 4 coloumns
+
+
+import numpy as np
+ar1=np.arange(13)
+ar1
+
+reshaped=ar1.reshape(13,1)
+reshaped
+
+np.eye(3,4)
+
+np.identity(5)
+
+#identity matrix can be crreated using two function
+#eye()
+#syntax-->np.eye(rows,column)
+#identity()
+#syntax-->np.identity(n)--n is n rows and n columnsar
+np.eye(5)
+
+len(ar1)
+
+#to perform multidimensional slicing
+ar2=np.arange(25).reshape(5,5)
+
+ar2
+
+ar2.shape
+
+#ar2[rows,columns,step]
+ar2[0:3]
+
+ar2[0:3,1:4]
+
+ar2[1:3]
+
+ar2[1:3,1:4]
+
+ar2[-1:-3]
+
+ar2[-0:-3,-1:-4]
+
+ar2[-0:-2]
+
+ar2[-4:-2,-4:-2]
+
+ar2[-3:-1,-3:-1]
+
+ar3=np.arange(50).reshape(5,10)
+ar3
+
+np.sum(ar3, axis=0)#to add based on column wise axis=0
+
+np.sum(ar3, axis=1)#to add based on row wise axis=1
+
+np.sum(ar3)
+
+#mean-->average
+#median-->center value
+#mode-->max num of repeated values
+#variance-->median/total number of elements
+#std-->square root of variance
+
+
+#linspace()
+np.linspace(1,10)
+
+#linspace()
+#it is used toprint the evenly seperated pointed between two range of values
+np.linspace(1,10,5)
+
+np.linspace(1,2,5)
+
+np.linspace(1,10,5,retstep=True)
+
+#random module
+#np.random.randint(start,end)
+np.random.randint(10,20)
+
+#np.random.randint(start,end,no.of_random_val)
+np.random.randint(10,25,3)
+
+#rand()-->to get the randomly genereted values from 0 to 1,based on uniform distribution
+np.random.rand(4)
+
+
+
+import numpy as np
+np.random.rand(10)
+
+ar4=np.arange(50)
+ar4
+
+ar4.max()
+
+#to find the index value of array
+l1=[2,34,5,65,87,67,56,35,90]
+np1=np.array(l1)
+#argmin()-->to find the min values index position in an array
+print(np1.argmin())
+#argmax()-->to find the max values index position in an array
+print(np1.argmax())
+
+np.tan(np1)
+
+np.sin(np1)/np.cos(np1)
+
+#task-1: write the python code for the following code
+np2=np.array([1,2,3])
+np3=np.array([4,5,6])
+#(1*4)+(2*5)+(3*6)=4+10+18 =32
+r=(np2[0]*np3[0])+(np2[1]*np3[1])+(np2[2]*np3[2])
+r
+
+np.sum(np2*np3)
+
+
+np5=np.array([1,2,3,5])
+np6=np.array([4,5,6,7])
+np.dot(np5,np6)
+
+#pandas
+import pandas as pd
+#panda is definrd as an open source librery that provides high performance data manipulation in python 
+#data analysis requires lot of processing such as restructing ,cleaning ,meerging etc.. we prefer pandas to perform above 
+#functionalities bcoz it is fast,simple than other tools
+#pandas is built on Numpy ,Numpy is reqiued for operating pandas
+
+#pandas serise
+#pandasa series is a data structures with one dimensionnal labbel array
+#it is a primery building block of dataframe,making its rows and columns
+
+labels =['a','b','c']
+mydata=[10,20,30]
+arr=np.array(mydata)
+d={'a':100,'b':200,'c':300}
+#synatx--> pandas.serise(data=none,index=none,dtype=None,name=none,copy=true or false)
+pd.Series(mydata)
+
+type(pd.Series(mydata))
+
+pd.Series(mydata,index=labels)
+
+ser1=pd.Series([1,2,3,4,5],['ind','usa',"aus",'Uk',"egypt"])
+ser1
+
+
+
+ser1['usa']
+
+ser1[1:3]
+
+ser2=pd.Series([6,7,8,9],['jrg','pp','vrp','pg'])
+ser1+ser2
+
+
+
+ser2['p8']="duplicate"
+ser2
+
+ser2.drop('pp')
+
+#dataframe
+#pd.DataFrame(datas,row,column)
+df=pd.DataFrame(np.random.randn(5,4),['a','b','c','d','e'])
+df
+
+#to convert dictionry to data frame
+d={'col1':[1,2],'col2':[3,4],'col3':[5,6]}
+d
+
+df=pd.DataFrame(data=d)
+
+df
+
+df=pd.DataFrame(d,['row1','row2'])
+df
+
+df
+
+df.T
+
+type(df)
+
+df.info#to get information about data frame
+
+df.values
+
+df.axes
+
+df.size
+
+#To acces speecific coloum  in data frame
+df[0]
+
+df['new']=df[0]+df[1]
+
+df
+
+df.drop('new',axis=1,inplace=True)
+
+df
+
